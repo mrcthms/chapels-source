@@ -33,7 +33,7 @@
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 configure :development do
@@ -41,17 +41,22 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def ddd(&block)
+    render(
+      partial: "partials/ddd",
+      locals: { block: block }
+    )
+  end
+end
 
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+activate :es6
 
 # Build-specific configuration
 configure :build do

@@ -1,0 +1,65 @@
+$ddd-distance: 12;
+
+@function hypotenuse($d) {
+  @return sqrt(pow($d, 2) + pow($d, 2));
+}
+
+.ddd {
+  position: relative;
+  margin-bottom: rem($ddd-distance);
+}
+
+.ddd-top {
+  background: white;
+  border: 4px solid get-colour('grey');
+  padding: rem(32);
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    height: rem(4);
+    width: rem(hypotenuse($ddd-distance));
+    background: get-colour('grey');
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    right: rem($ddd-distance * -1);
+    bottom: rem($ddd-distance * -1.1875);
+  }
+}
+
+.ddd-bottom {
+  background: get-colour('mustard');
+  border: 4px solid get-colour('grey');
+  border-top-width: 0;
+  border-left-width: 0;
+  position: absolute;
+  left: rem($ddd-distance);
+  bottom: rem($ddd-distance * -1);
+  width: 100%;
+  height: 100%;
+  box-shadow: rem(-4) 0 white inset;
+
+  &:before,
+  &:after {
+    height: rem(4);
+    width: rem(hypotenuse($ddd-distance));
+    background: black;
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  &:before {
+    right: -1px;
+    top: -1px;
+    box-shadow: rem(-1) rem(4) white, rem(-3) rem(8) get-colour('mustard');
+  }
+
+  &:after {
+    left: rem(hypotenuse($ddd-distance) * -1);
+    bottom: rem(-4);
+    box-shadow: -1px rem(-4) get-colour('mustard'), 0px rem(-8) get-colour('mustard');
+  }
+}

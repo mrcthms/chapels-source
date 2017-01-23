@@ -1,0 +1,62 @@
+.button {
+  background: linear-gradient(
+    get-colour('smoked-salmon') 0%,
+    get-colour('smoked-salmon') 50%,
+    get-colour('purple') 50%,
+    get-colour('purple') 100%
+  );
+  border: 4px solid get-colour('grey');
+  border-radius: rem(8);
+  padding: rem(6);
+  color: white;
+  font-size: rem(18);
+  font-family: $font-mono;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 2;
+  cursor: pointer;
+  box-shadow: 0 0 get-colour('grey');
+  transition: .25s $bezier-out;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 rem(4) get-colour('grey');
+    outline: none;
+    transform: translateY(-4px);
+  }
+
+  &:active {
+    background: linear-gradient(
+      to top,
+      get-colour('smoked-salmon') 0%,
+      get-colour('smoked-salmon') 50%,
+      get-colour('purple') 50%,
+      get-colour('purple') 100%
+    );
+    outline: none;
+    box-shadow: 0 0 get-colour('grey');
+    transform: none;
+  }
+}
+
+.button-inner {
+  background: linear-gradient(
+    get-colour('purple') 0%,
+    get-colour('purple') 50%,
+    get-colour('smoked-salmon') 0%,
+    get-colour('smoked-salmon') 100%
+  );
+  border-radius: rem(2);
+  display: block;
+  padding: 0 rem(32);
+
+  .button:active & {
+    background: linear-gradient(
+      to bottom,
+      get-colour('smoked-salmon') 0%,
+      get-colour('smoked-salmon') 50%,
+      get-colour('purple') 50%,
+      get-colour('purple') 100%
+    );
+  }
+}

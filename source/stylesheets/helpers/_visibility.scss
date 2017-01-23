@@ -1,0 +1,33 @@
+@include placeholders("hidden") {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@include classes("hidden", "fablet-down");
+
+@include placeholders('for-screen-readers') {
+  background: get-colour('smoked-salmon');
+  color: white;
+  height: 1px;
+  left: 1px;
+  overflow: hidden;
+  position: fixed;
+  top: 1px;
+  transition-property: background, color;
+  width: 1px;
+
+  // &:focus {
+  //   color: white
+  //   height: auto;
+  //   width: auto;
+  //   left: 50%;
+  //   padding: get-size('small') get-size('default');
+  //   top: rem(10);
+  //   z-index: 5;
+  //
+  //   &:hover {
+  //     background: get-colour('red');
+  //     color: get-colour('white');
+  //   }
+  // }
+}

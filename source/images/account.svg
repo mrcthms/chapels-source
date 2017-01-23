@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 32" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path id="a" d="M0,24 C0,20.6862915 2.68475771,18 6.00670248,18 L21.9932975,18 C25.3107077,18 28,20.6930342 28,24 L28,27.9914698 C28,29.1007504 27.1001025,30 26.0087557,30 L1.99124431,30 C0.891510444,30 0,29.0980496 0,27.9914698 L0,24 Z"/>
+    <filter id="b" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dx="-2" dy="-3" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+      <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" in="shadowInnerInner1"/>
+    </filter>
+    <polygon id="c" points="6 18 11 30 17 30 22 18"/>
+    <filter id="d" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dx="-2" dy="-3" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+      <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" in="shadowInnerInner1"/>
+    </filter>
+    <linearGradient id="f" x1="67.354%" x2="67.354%" y1="50%" y2="0%">
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"/>
+      <stop stop-color="#2C2C21" offset=".635%"/>
+      <stop stop-color="#2C2C21" offset="100%"/>
+    </linearGradient>
+    <circle id="e" cx="14" cy="18" r="3"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+    <use fill="#FF7E6B" xlink:href="#a"/>
+    <use fill="black" filter="url(#b)" xlink:href="#a"/>
+    <use stroke="#2C2C21" stroke-width="2" xlink:href="#a"/>
+    <use fill="#F6B733" xlink:href="#c"/>
+    <use fill="black" filter="url(#d)" xlink:href="#c"/>
+    <use stroke="#2C2C21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xlink:href="#c"/>
+    <circle cx="14" cy="9" r="9" fill="#FFFFFF" stroke="#2C2C21" stroke-width="2" transform="rotate(90 14 9)"/>
+    <path fill="#E0E2DB" stroke="#2C2C21" stroke-width="2" d="M23,9 C23,4.02943725 18.9705627,0 14,0 C9.02943725,0 5,4.02943725 5,9 L14.0046024,9 C14.5543453,9 15.3125,8.6875 15.7107565,8.28924346 L16.2892435,7.71075654 C16.6817835,7.31821654 17.3125,7.3125 17.7107565,7.71075654 L18.2892435,8.28924346 C18.6817835,8.68178346 19.4433532,9 20.0093689,9 L23,9 Z" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="14" cy="27" r="1" fill="#2C2C21"/>
+    <circle cx="14" cy="24" r="1" fill="#2C2C21"/>
+    <polygon fill="#E0E2DB" stroke="#2C2C21" stroke-width="2" points="15 17 21 15 21 21 15 19" stroke-linejoin="round"/>
+    <polygon fill="#E0E2DB" stroke="#2C2C21" stroke-width="2" points="7 17 13 15 13 21 7 19" stroke-linejoin="round" transform="rotate(180 10 18)"/>
+    <g transform="rotate(90 14 18)">
+      <use fill="#F6B733" xlink:href="#e"/>
+      <use fill="url(#f)" stroke="#2C2C21" stroke-width="2" xlink:href="#e"/>
+    </g>
+  </g>
+</svg>

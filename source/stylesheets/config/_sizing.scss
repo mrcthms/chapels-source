@@ -1,0 +1,11 @@
+@import "../functions/units";
+
+$sizing-map: (
+  "none": 0,
+  "tiny": rem(4),
+  "small": rem(8),
+  "default": rem(16),
+  "big": rem(32),
+  "bigger": rem(48),
+  "huge": rem(64)
+) !default;

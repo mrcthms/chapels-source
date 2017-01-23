@@ -1,0 +1,44 @@
+<nav
+  class="quick-links"
+  role="navigation">
+  <ul>
+    <li class="hidden-on-fablet-down">
+      <a href="/">
+        <div class="ddd">
+          <div class="ddd-top">
+            <%= image_tag "account.svg", alt: "Account" %>
+          </div>
+          <div class="ddd-bottom"></div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <div class="ddd">
+        <div class="ddd-top search-wrapper js-search-target-wrapper">
+          <form
+            action="/search"
+            class="search-form js-search-target-form">
+            <input type="text" placeholder="Search" class="input-small js-search-target-input" />
+            <button type="submit" class="search-submit">
+              Submit
+            </button>
+          </form>
+          <button type="button" class="search-toggle js-search">
+            <%= image_tag "search.svg", alt: "Search" %>
+          </button>
+        </div>
+        <div class="ddd-bottom"></div>
+      </div>
+    </li>
+    <li>
+      <a href="/">
+        <div class="ddd">
+          <div class="ddd-top">
+            <%= image_tag "basket.svg", alt: "Basket" %>
+          </div>
+          <div class="ddd-bottom"></div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</nav>

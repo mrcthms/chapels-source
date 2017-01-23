@@ -1,0 +1,10 @@
+@import "../config/colors";
+
+@function get-colour($value) {
+  @if map-has-key($palette, $value) {
+    @return map-get($palette, $value);
+  }
+
+  @warn "The colour `#{$value}` is not in the map. Defaulting to grey.";
+  @return map-get($palette, 'grey');
+}

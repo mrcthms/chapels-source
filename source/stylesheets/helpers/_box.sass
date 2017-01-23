@@ -1,0 +1,80 @@
+@import "../mixins/responsive"
+@import "../mixins/utility"
+@import "../config/sizing"
+
+$box-map: ('spaced': 'margin', 'padded': 'padding')
+$position-list: ('top' 'left' 'bottom' 'right')
+
+// Display
++placeholders("block")
+  display: block
+
++placeholders("inline-block")
+  display: inline-block
+
+
+// Size
++placeholders("widest")
+  display: block
+  width: 100%
+  max-width: 100%
+
++placeholders("tallest")
+  display: block
+  height: 100%
+  max-height: 100%
+
+
+// Padding / Margin / Spacing
+=rows($prop, $size)
+  #{$prop}-top: $size
+  #{$prop}-bottom: $size
+
+=cols($prop, $size)
+  #{$prop}-left: $size
+  #{$prop}-right: $size
+
+@each $box-name, $box-property in $box-map
+
+  +placeholders('#{$box-name}')
+    #{$box-property}: map-get($sizing-map, 'default') !important
+
+  +placeholders('#{$box-name}-rows')
+    +rows($box-property, map-get($sizing-map, 'default'))
+
+  +placeholders('#{$box-name}-cols')
+    +cols($box-property, map-get($sizing-map, 'default'))
+
+  @each $position in $position-list
+    +placeholders('#{$box-name}-#{$position}')
+      #{$box-property}-#{$position}: map-get($sizing-map, 'default') !important
+
+  @each $size-name, $size in $sizing-map
+    +placeholders('#{$box-name}-#{$size-name}')
+      #{$box-property}: $size
+
+    +placeholders('#{$box-name}-rows-#{$size-name}')
+      +rows($box-property, $size)
+
+    +placeholders('#{$box-name}-cols-#{$size-name}')
+      +cols($box-property, $size)
+
+    @each $position in $position-list
+      +placeholders('#{$box-name}-#{$position}-#{$size-name}')
+        #{$box-property}-#{$position}: #{$size} !important
+
+
+=inline-blocks-spaced-defaults
+  [class*="inline-blocks-spaced"] > *
+    letter-spacing: normal
+
++placeholders('inline-blocks-spaced')
+  letter-spacing: map-get($sizing-map, 'default')
+  +write-once($ref: 'IBSD')
+    +inline-blocks-spaced-defaults
+
+@each $size-name, $size in $sizing-map
+  +placeholders('inline-blocks-spaced-#{$size-name}')
+    letter-spacing: $size
+    +write-once($ref: 'IBSD')
+      +inline-blocks-spaced-defaults

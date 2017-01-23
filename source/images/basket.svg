@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 32 30" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path id="a" d="M4,15 L6.55086969,26.0537686 C6.79891751,27.1286425 7.89451376,28 8.99406028,28 L21.0059397,28 C22.1072288,28 23.2014968,27.1268472 23.4491303,26.0537686 L26,15 L4,15 Z"/>
+    <filter id="b" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dx="-2" dy="-3" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+      <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" in="shadowInnerInner1"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+    <use fill="#FF7E6B" xlink:href="#a"/>
+    <use fill="black" filter="url(#b)" xlink:href="#a"/>
+    <use stroke="#2C2C21" stroke-width="2" xlink:href="#a"/>
+    <path stroke="#2C2C21" stroke-width="2" d="M5,13 L7.47400693,3.92864127 C7.76450488,2.86348211 8.89706013,2 10.0058587,2 L19.9941413,2 C21.1019465,2 22.235405,2.86315155 22.5259931,3.92864127 L25,13"/>
+    <rect width="8" height="4" x="11" fill="#F6B733" stroke="#2C2C21" stroke-width="2" rx="1"/>
+    <rect width="30" height="4" y="11" fill="#E0E2DB" stroke="#2C2C21" stroke-width="2" rx="2"/>
+    <circle cx="15" cy="13" r="4" fill="#F6B733" stroke="#2C2C21" stroke-width="2"/>
+    <path fill="#2C2C21" d="M1.70530257e-13,-1.66089364e-13 C2.209139,-1.66089364e-13 4,1.790861 4,4 C4,6.209139 2.209139,8 1.70530257e-13,8 L1.70530257e-13,-1.66089364e-13 Z" transform="translate(15 9)"/>
+    <path stroke="#2C2C21" stroke-width="2" d="M10 20L20 20M11 23L19 23" stroke-linecap="round"/>
+  </g>
+</svg>

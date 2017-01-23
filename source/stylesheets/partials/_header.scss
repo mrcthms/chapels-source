@@ -1,0 +1,243 @@
+.site-header {
+  @extend %positioned-fixed;
+  @extend %padded-on-fablet-down;
+  background: white;
+  display: flex;
+  left: 0;
+  top: 0;
+  z-index: 3;
+
+  @include on("fablet-down") {
+    border-bottom: rem(4) solid get-colour('grey-light');
+    height: rem(64);
+    width: 100%;
+  }
+
+  @include on("tablet-up") {
+    border-right: rem(4) solid get-colour('grey-light');
+    flex-direction: column;
+    width: rem(244);
+    height: 100%;
+  }
+}
+
+/**
+ * Logo
+ */
+
+.logo {
+  @extend %padded-left-bigger-on-tablet-up;
+  @extend %padded-right-bigger-on-tablet-up;
+  @extend %padded-top-big-on-tablet-up;
+  @extend %padded-bottom-big-on-tablet-up;
+  display: block;
+
+  @include on("tablet-up") {
+    position: relative;
+    &:after {
+      height: rem(4);
+      background: get-colour('grey-light');
+      width: rem(192);
+      content: '';
+      right: 0;
+      bottom: rem(-2);
+      position: absolute;
+    }
+  }
+}
+
+.logo-large {
+  display: block;
+  @include on("fablet-down") {
+    position: relative;
+    top: rem(2);
+  }
+
+  @include on("tablet-up") {
+    margin: 0 auto;
+  }
+}
+
+/**
+ * Navigation
+ */
+
+.toggle-nav {
+  @extend %hidden-on-tablet-up;
+  @extend %spaced-right;
+  text-indent: -9999em;
+  height: rem(60);
+  width: rem(64);
+  background: none;
+  border: none;
+  border-right: rem(4) solid get-colour('grey-light');
+  margin: rem(-16) 0 rem(-16) rem(-16);
+  position: relative;
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.toggle-nav-inner {
+  background: get-colour('grey-light');
+  height: rem(4);
+  width: rem(24);
+  position: absolute;
+  margin-top: rem(-2);
+  margin-left: rem(-12);
+  top: 50%;
+  left: 50%;
+  transition: transform .25s $bezier-bounce;
+  &:before,
+  &:after {
+    content: '';
+    background: get-colour('grey-light');
+    height: inherit;
+    width: inherit;
+    position: inherit;
+    top: inherit;
+    left: inherit;
+    margin-left: inherit;
+    transition: inherit;
+  }
+
+  &:before {
+    margin-top: rem(-10);
+  }
+
+  &:after {
+    margin-top: rem(6);
+  }
+
+  .is-visible & {
+    background: white;
+    &:before {
+      background: get-colour('smoked-salmon');
+      transform: rotate(45deg) translateX(3px) translateY(-3px);
+      transform-origin: 0% 0%;
+    }
+
+    &:after {
+      background: get-colour('smoked-salmon');
+      transform: rotate(-45deg) translateX(3px) translateY(3px);
+      transform-origin: 0% 100%;
+    }
+  }
+}
+
+.nav-wrap {
+  @extend %positioned-absolute-on-fablet-down;
+  @include on("fablet-down") {
+    height: calc(100vh - #{rem(64)});
+    left: 0;
+    top: rem(64);
+    width: 100%;
+    background: white;
+    visibility: hidden;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 0%;
+    transition: visibility .25s ease .25s, opacity .25s ease .25s, transform .25s $bezier-out .25s;
+
+    .nav {
+      opacity: 0;
+      transform: translateX(rem(-64));
+      transition: opacity .25s ease, transform .25s $bezier-out;
+    }
+
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: scaleY(1);
+      transition-delay: 0s, 0s, 0s;
+
+      .nav {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: .25s, .25s;
+      }
+    }
+  }
+  @extend %padded-left-bigger-on-tablet-up;
+  @extend %padded-right-bigger-on-tablet-up;
+  @extend %padded-top-big-on-tablet-up;
+  @extend %padded-bottom-big-on-tablet-up;
+  @include on("tablet-up") {
+    display: flex;
+    align-items: center;
+    flex: 2;
+  }
+}
+
+.nav {
+  @extend %padded-left-big-on-fablet-down;
+  @extend %padded-right-big-on-fablet-down;
+  @extend %padded-top-on-fablet-down;
+  @extend %padded-bottom-on-fablet-down;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .for-fablet {
+    @extend %hidden-on-tablet-up;
+  }
+
+  a {
+    font-weight: 400;
+    display: block;
+    @extend %padded-top;
+    @extend %padded-bottom;
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+  }
+
+  .active span {
+    &:before {
+      background: get-colour('mustard');
+      height: rem(4);
+      right: rem(-16);
+      top: 50%;
+      left: rem(-48);
+      content: '';
+      position: absolute;
+      transform: translateY(rem(-1));
+      z-index: -1;
+    }
+  }
+}
+
+
+/**
+ * Socal
+ */
+
+.social {
+  @extend %hidden-on-fablet-down;
+  @extend %padded-left-bigger-on-tablet-up;
+  @extend %padded-right-bigger-on-tablet-up;
+  @extend %padded-top-big-on-tablet-up;
+  @extend %padded-bottom-big-on-tablet-up;
+  display: block;
+
+  @include on("tablet-up") {
+    position: relative;
+    &:after {
+      height: rem(4);
+      background: get-colour('grey-light');
+      width: rem(192);
+      content: '';
+      right: 0;
+      top: rem(-2);
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+input[type="text"],
+input[type="number"] {
+  padding: get-size('small') get-size('default');
+  border: 4px solid get-colour('grey-light');
+  border-radius: rem(4);
+  box-shadow: 0 rem(4) rgba(get-colour('grey-light'), 0.5) inset;
+  line-height: (28 / 16);
+
+  &:hover,
+  &:active {
+    outline: none;
+    border-color: darken(get-colour('grey-light'), 10%);
+  }
+
+  &:focus {
+    border-color: get-colour('mustard');
+    outline: none;
+  }
+}
+
+input.input-small {
+  line-height: (20 / 16);
+}

@@ -1,0 +1,10 @@
+@import "../config/sizing";
+
+@function get-size($value) {
+  @if map-has-key($sizing-map, $value) {
+    @return map-get($sizing-map, $value);
+  }
+
+  @warn "The size `#{$value}` is not in the map. Defaulting to default.";
+  @return map-get($sizing-map, 'default');
+}

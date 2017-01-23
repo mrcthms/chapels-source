@@ -1,0 +1,29 @@
+html {
+  background: image-url('blob-pattern.svg') repeat;
+  background-size: rem(96) rem(96);
+  font-size: 100%;
+}
+
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+input,
+button,
+select,
+textarea {
+  font-family: $font-sans;
+  color: get-colour('grey');
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.welcome {
+  padding: 20px;
+}

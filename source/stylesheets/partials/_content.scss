@@ -1,0 +1,9 @@
+.content {
+  @include on("fablet-down") {
+    margin-top: rem(64);
+  }
+
+  @include on("tablet-up") {
+    margin-left: rem(244);
+  }
+}

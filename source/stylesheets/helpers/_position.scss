@@ -1,0 +1,11 @@
+@include placeholders("positioned-fixed") {
+  position: fixed !important;
+}
+
+@include placeholders("positioned-relative") {
+  position: relative !important;
+}
+
+@include placeholders("positioned-absolute") {
+  position: absolute !important;
+}
