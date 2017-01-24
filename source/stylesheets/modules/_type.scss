@@ -1,0 +1,32 @@
+%text-milli {
+  font-size: rem(14);
+  line-height: (24 / 14);
+}
+
+%text-base {
+  font-size: rem(16);
+  line-height: (24 / 16);
+}
+
+%text-kilo {
+  font-size: rem(18);
+  line-height: (24 / 18)
+}
+
+%text-mega {
+  font-size: rem(24);
+  line-height: (32 / 24);
+}
+
+%text-giga {
+  font-size: rem(32);
+  line-height: (40 / 32);
+}
+
+%font-sans {
+  font-family: $font-sans;
+}
+
+%font-mono {
+  font-family: $font-mono;
+}

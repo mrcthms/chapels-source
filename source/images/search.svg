@@ -1,29 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <linearGradient id="b" x1="67.354%" x2="67.354%" y1="50%" y2="0%">
+    <rect id="a" width="6" height="16" x="7" y="18" rx="2"/>
+    <filter id="b" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dy="-8" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+      <feColorMatrix values="0 0 0 0 1 0 0 0 0 0.494117647 0 0 0 0 0.419607843 0 0 0 1 0" in="shadowInnerInner1" result="shadowMatrixInner1"/>
+      <feOffset dy="-5" in="SourceAlpha" result="shadowOffsetInner2"/>
+      <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"/>
+      <feColorMatrix values="0 0 0 0 0.961920706 0 0 0 0 0.718267373 0 0 0 0 0.200020601 0 0 0 1 0" in="shadowInnerInner2" result="shadowMatrixInner2"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixInner1"/>
+        <feMergeNode in="shadowMatrixInner2"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="d" x1="67.354%" x2="67.354%" y1="50%" y2="0%">
       <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"/>
       <stop stop-color="#2C2C21" offset=".635%"/>
       <stop stop-color="#2C2C21" offset="100%"/>
     </linearGradient>
-    <circle id="a" cx="10" cy="10" r="10"/>
-    <path id="c" d="M29.2890419,34.2890419 C29.6816932,34.6816932 30.4438648,35 31,35 L31,35 C31.5522847,35 32.3210526,34.6789474 32.7109581,34.2890419 L34.2890419,32.7109581 C34.6816932,32.3183068 35,31.5561352 35,31 L35,31 C35,30.4477153 34.6789474,29.6789474 34.2890419,29.2890419 L33.4121541,28.4121541 C32.6322429,27.6322429 31.3667465,27.6332535 30.580575,28.419425 L28.419425,30.580575 C27.6354982,31.3645018 27.6362228,32.6362228 28.4121541,33.4121541 L29.2890419,34.2890419 Z"/>
-    <filter id="d" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
-      <feOffset dx="-3" in="SourceAlpha" result="shadowOffsetInner1"/>
-      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
-      <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" in="shadowInnerInner1"/>
-    </filter>
+    <circle id="c" cx="10" cy="10" r="10"/>
   </defs>
-  <g fill="none" fill-rule="evenodd" transform="translate(-4 -4)">
-    <g transform="rotate(-45 18.536 6.464)">
-      <rect width="4" height="17" x="8" y="17" fill="#E0E2DB" stroke="#2C2C21" stroke-width="2" rx="2"/>
-      <rect width="8" height="5" x="6" y="19" fill="#FFFFFF" stroke="#2C2C21" stroke-width="2" rx="1"/>
-      <use fill="#FF7E6B" xlink:href="#a"/>
-      <use fill="url(#b)" stroke="#2C2C21" stroke-width="2" xlink:href="#a"/>
-      <circle cx="10" cy="10" r="6" fill="#FFFFFF" stroke="#2C2C21" stroke-width="2"/>
-      <path stroke="#F6B733" stroke-width="2" d="M12,10 C12,8.8954305 11.1045695,8 10,8 C8.8954305,8 8,8.8954305 8,10" stroke-linecap="round"/>
-    </g>
-    <use fill="#F6B733" xlink:href="#c"/>
-    <use fill="black" filter="url(#d)" xlink:href="#c"/>
-    <use stroke="#2C2C21" stroke-width="2" xlink:href="#c"/>
+  <g fill="none" fill-rule="evenodd" transform="rotate(-45 11.707 9.293)">
+    <use fill="#FFFFFF" xlink:href="#a"/>
+    <use fill="black" filter="url(#b)" xlink:href="#a"/>
+    <use stroke="#2C2C21" stroke-width="2" xlink:href="#a"/>
+    <rect width="10" height="8" x="5" y="17" fill="#E0E2DB" stroke="#2C2C21" stroke-width="2" rx="2"/>
+    <use fill="#FF7E6B" xlink:href="#c"/>
+    <use fill="url(#d)" stroke="#2C2C21" stroke-width="2" xlink:href="#c"/>
+    <circle cx="10" cy="10" r="6" fill="#FFFFFF" stroke="#2C2C21" stroke-width="2"/>
+    <path stroke="#F6B733" stroke-width="2" d="M12,10 C12,8.8954305 11.1045695,8 10,8 C8.8954305,8 8,8.8954305 8,10" stroke-linecap="round"/>
+    <path stroke="#2C2C21" stroke-width="2" d="M8 29L12 29M8 25L12 25"/>
   </g>
 </svg>

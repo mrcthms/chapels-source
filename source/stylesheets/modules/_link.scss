@@ -13,7 +13,7 @@ a {
   }
 }
 
-.content a {
+.underlined-link {
   color: get-colour('salmon');
   background: -webkit-linear-gradient(0deg, get-colour('mustard'), get-colour('salmon'));
   -webkit-background-clip: text;
@@ -48,5 +48,39 @@ a {
 
   &:active {
     transform: translateY(rem(3));
+  }
+}
+
+.scaled-bg-link {
+  color: get-colour('grey');
+  .bg {
+    display: inline-block;
+    position: relative;
+
+    &:after {
+      background: linear-gradient(90deg, get-colour('mustard'), get-colour('smoked-salmon'));
+      left: rem(-8);
+      right: rem(-8);
+      top: rem(-4);
+      bottom: rem(-4);
+      content: '';
+      position: absolute;
+      transform: rotate(-1.2deg) scale(0);
+      transition: .25s $bezier-out;
+      z-index: -1;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: white;
+    .bg:after {
+      transform: rotate(-1.2deg) scale(1);
+    }
+  }
+
+  &:active {
+    color: white;
+    transform: translateY(3px);
   }
 }

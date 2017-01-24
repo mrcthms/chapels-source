@@ -16,8 +16,12 @@
   @include on("tablet-up") {
     border-right: rem(4) solid get-colour('grey-light');
     flex-direction: column;
-    width: rem(244);
+    width: rem(192);
     height: 100%;
+  }
+
+  @include on("desktop-up") {
+    width: rem(244);
   }
 }
 
@@ -26,22 +30,26 @@
  */
 
 .logo {
-  @extend %padded-left-bigger-on-tablet-up;
-  @extend %padded-right-bigger-on-tablet-up;
-  @extend %padded-top-big-on-tablet-up;
-  @extend %padded-bottom-big-on-tablet-up;
   display: block;
 
   @include on("tablet-up") {
+    padding: get-size('big');
     position: relative;
     &:after {
       height: rem(4);
       background: get-colour('grey-light');
-      width: rem(192);
+      width: rem(160);
       content: '';
       right: 0;
       bottom: rem(-2);
       position: absolute;
+    }
+  }
+
+  @include on("desktop-up") {
+    padding: get-size('big') get-size('bigger');
+    &:after {
+      width: rem(192);
     }
   }
 }
@@ -162,14 +170,15 @@
       }
     }
   }
-  @extend %padded-left-bigger-on-tablet-up;
-  @extend %padded-right-bigger-on-tablet-up;
-  @extend %padded-top-big-on-tablet-up;
-  @extend %padded-bottom-big-on-tablet-up;
+
   @include on("tablet-up") {
     display: flex;
+    padding: get-size('big');
     align-items: center;
     flex: 2;
+  }
+  @include on("desktop-up") {
+    padding: get-size('big') get-size('bigger');
   }
 }
 
@@ -178,6 +187,8 @@
   @extend %padded-right-big-on-fablet-down;
   @extend %padded-top-on-fablet-down;
   @extend %padded-bottom-on-fablet-down;
+  width: 100%;
+
   ul {
     margin: 0;
     padding: 0;
@@ -193,11 +204,6 @@
     display: block;
     @extend %padded-top;
     @extend %padded-bottom;
-  }
-
-  span {
-    display: inline-block;
-    position: relative;
   }
 
   .active span {
@@ -222,22 +228,28 @@
 
 .social {
   @extend %hidden-on-fablet-down;
-  @extend %padded-left-bigger-on-tablet-up;
-  @extend %padded-right-bigger-on-tablet-up;
-  @extend %padded-top-big-on-tablet-up;
-  @extend %padded-bottom-big-on-tablet-up;
   display: block;
 
   @include on("tablet-up") {
+    padding: get-size('big');
     position: relative;
+
     &:after {
       height: rem(4);
       background: get-colour('grey-light');
-      width: rem(192);
+      width: rem(160);
       content: '';
       right: 0;
       top: rem(-2);
       position: absolute;
+    }
+  }
+
+  @include on("desktop-up") {
+    padding: get-size('big') get-size('bigger');
+
+    &:after {
+      width: rem(192);
     }
   }
 }

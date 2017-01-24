@@ -1,19 +1,9 @@
 ---
 title: Welcome to Middleman
 ---
-
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://marcbook.home:4567/" %>
-  </p><!-- .doc -->
-  <div class="ddd">
-    <div class="ddd-top">
-      <p>This will be content for the 3d block</p>
-      <button class="button">
-        <span class="button-inner">Add To Cart</span>
-      </button>
-    </div>
-    <div class="ddd-bottom"></div>
-  </div>
-</div><!-- .welcome -->
+<div class="product-collection">
+  <%= partial "partials/product_listing", locals: { title: "Hemingway" } %>
+  <%= partial "partials/product_listing", locals: { title: "Huxley" } %>
+  <%= partial "partials/product_listing", locals: { title: "Grant" } %>
+  <%= partial "partials/product_listing", locals: { title: "Vonnegut" } %>
+</div>

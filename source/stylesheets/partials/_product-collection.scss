@@ -1,0 +1,16 @@
+.product-collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+  @include on("fablet") {
+    justify-content: space-between;
+  }
+
+  @include on("tablet-up") {
+    justify-content: flex-start;
+    margin-left: rem(-48);
+    max-width: rem(1056);
+  }
+}

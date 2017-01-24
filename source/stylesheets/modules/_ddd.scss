@@ -14,6 +14,7 @@ $ddd-distance: 12;
   border: 4px solid get-colour('grey');
   padding: rem(32);
   position: relative;
+  width: 100%;
   z-index: 1;
 
   &:before {

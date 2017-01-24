@@ -1,9 +1,16 @@
 .content {
+  @extend %padded-big-on-tablet-down;
+  @extend %padded-bigger-on-desktop-up;
+
   @include on("fablet-down") {
     margin-top: rem(64);
   }
 
   @include on("tablet-up") {
+    margin-left: rem(196);
+  }
+
+  @include on("desktop-up") {
     margin-left: rem(244);
   }
 }

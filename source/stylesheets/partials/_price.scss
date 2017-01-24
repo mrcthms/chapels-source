@@ -1,0 +1,19 @@
+.price {
+  @extend %font-mono;
+  color: white;
+  display: inline-block;
+  position: relative;
+  padding: get-size('tiny') get-size('small');
+
+  &:before {
+    background: get-colour('mustard');
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    transform: rotate(-2.4deg);
+    z-index: -1;
+  }
+}
